@@ -1,0 +1,10 @@
+<ul class="barco">
+    <div *ngIf="barco">
+      <h2>Datos tecnicos: {{barco.nombre | uppercase}}</h2>
+      <div>
+        <p>ID del Barco: {{barco.id}}</p>
+        <p>Nombre del Barco: {{barco.nombre}}</p>
+        <p>Tipo del Barco: {{barco.tipo}}</p>
+        <img src="assets/{{barco.imagen}}" alt="" srcset="">
+      </div>
+    </div>
