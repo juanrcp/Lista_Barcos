@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Barco } from '../Barco';
-import { BARCOS } from '../mock-barcos';
+import { BuquesService } from '../buques.service';
 
 @Component({
   selector: 'app-lista-barcos',
@@ -9,15 +9,15 @@ import { BARCOS } from '../mock-barcos';
 })
 export class ListaBarcosComponent implements OnInit {
 
-  constructor() { }
+  barcos : Barco[] = [];
 
+  constructor(private buquesService:BuquesService) {}
+  
   ngOnInit(): void {
+    this.getBarcos();
   }
 
-  selectedBarco?: Barco;
-  barcos : Barco[] = BARCOS;
-
-  onSelect(barco: Barco): void {
-    this.selectedBarco = barco;
+  getBarcos(): void {
+    this.barcos = this.buquesService.getBarcos();
   }
 }

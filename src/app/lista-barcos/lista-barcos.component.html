@@ -1,9 +1,9 @@
-<ul class="heroes">
+<ul class="barcos">
   <li *ngFor="let barco of barcos">
-    <button [class.selected]="barco === selectedBarco" type="button" (click)="onSelect(barco)">
-      <span class="name">{{barco.nombre}}</span>
+    <button routerLink="/detalles/{{barco.id}}">
+      <span class="badge">{{barco.id}}</span> {{barco.nombre}}
     </button>
   </li>
 </ul>
-<app-detalles [barco] = "selectedBarco"></app-detalles>
+<!--<app-detalles [barco] = "selectedBarco"></app-detalles>-->
 
